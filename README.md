@@ -5,7 +5,7 @@
   <br>
 </h1>
 
-<h4 align="center">A playable version of the popular board game Connect 4! <a href="http://placeholder.com" target="_blank">Connect 4</a>.</h4>
+<h4 align="center">A playable version of the popular board game Connect 4! <a href="https://klseung.github.io/connect-four/" target="_blank">Connect 4</a>.</h4>
 
 ![Alt text](/public/Connect-4-Game.png "Connect-4")
 
