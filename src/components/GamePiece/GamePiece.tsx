@@ -100,6 +100,18 @@ export const GamePiece = ({ currentGamePiece, colIndex }: IGamePiece) => {
         }
       }
     }
+
+    // check for tie
+    for (let row = 0; row < gameBoard.length; row++) {
+      for (let col = 0; col < gameBoard[row].length; col++) {
+        if (gameBoard[row][col] === 0) {
+          return 0;
+        }
+      }
+      return "tie";
+    }
+
+    return null;
   };
 
   const handlePlayerTurn = (col: number, gameBoard: GameBoard) => {
@@ -122,10 +134,15 @@ export const GamePiece = ({ currentGamePiece, colIndex }: IGamePiece) => {
           isGameOver: true,
           gameWinner: players.player1,
         });
-      } else {
+      } else if (winner === 2) {
         setGameStatus({
           isGameOver: true,
           gameWinner: players.player2,
+        });
+      } else {
+        setGameStatus({
+          isGameOver: true,
+          gameWinner: 3,
         });
       }
     }

@@ -26,7 +26,9 @@ export const PlayerTurnHeader = () => {
     <PlayerTurnHeaderContainer>
       <Typography variant="h3" component="div" gutterBottom>
         {gameStatus.gameWinner
-          ? `Player ${gameStatus.gameWinner} wins!`
+          ? gameStatus.gameWinner === 3
+            ? `It's a Tie!`
+            : `Player ${gameStatus.gameWinner} wins!`
           : `Player ${currentPlayer}'s Turn`}
       </Typography>
       <Button
