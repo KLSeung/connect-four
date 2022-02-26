@@ -1,13 +1,18 @@
 import { Typography, Button } from "@mui/material";
 import React from "react";
-import { useGameContext } from "../../GameContext";
+import { players, useGameContext } from "../../GameContext";
 import { PlayerTurnHeaderContainer } from "./styles";
 
 export const PlayerTurnHeader = () => {
-  const { currentPlayer, setCurrentGame, gameStatus, setGameStatus } =
-    useGameContext();
+  const {
+    currentPlayer,
+    setCurrentPlayer,
+    setCurrentGame,
+    gameStatus,
+    setGameStatus,
+  } = useGameContext();
 
-  const makeNewGame = () => {
+  const resetGame = () => {
     setCurrentGame([
       [0, 0, 0, 0, 0, 0, 0],
       [0, 0, 0, 0, 0, 0, 0],
@@ -20,6 +25,7 @@ export const PlayerTurnHeader = () => {
       isGameOver: false,
       gameWinner: null,
     });
+    setCurrentPlayer(players.player1);
   };
 
   return (
@@ -33,7 +39,7 @@ export const PlayerTurnHeader = () => {
       </Typography>
       <Button
         onClick={() => {
-          makeNewGame();
+          resetGame();
         }}
         variant="contained"
       >
