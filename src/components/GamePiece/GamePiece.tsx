@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { GamePieceContainer, GamePieceCircle } from "./styles";
 
 interface IGamePiece {
   currentGamePiece: number;
@@ -16,5 +17,11 @@ export const GamePiece = ({ currentGamePiece, index }: IGamePiece) => {
     }
   }, [currentGamePiece]);
 
-  return <td>{pieceColor}</td>;
+  return (
+    <td>
+      <GamePieceContainer>
+        <GamePieceCircle pieceColor={pieceColor} />
+      </GamePieceContainer>
+    </td>
+  );
 };

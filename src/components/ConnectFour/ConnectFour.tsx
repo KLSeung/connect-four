@@ -1,3 +1,4 @@
+import { Box } from "@mui/material";
 import React, { useEffect, useState } from "react";
 import { GameRow } from "../GameRow/GameRow";
 import { ConnectFourTable } from "./styles";
@@ -23,12 +24,18 @@ export const ConnectFour = () => {
   }, [players.player1]);
 
   return (
-    <ConnectFourTable>
-      <tbody>
-        {currentGame.map((currentGameRow, i) => (
-          <GameRow key={i} currentGameRow={currentGameRow}></GameRow>
-        ))}
-      </tbody>
-    </ConnectFourTable>
+    <Box
+      sx={{
+        marginTop: "8rem",
+      }}
+    >
+      <ConnectFourTable cellPadding={0}>
+        <tbody>
+          {currentGame.map((currentGameRow, i) => (
+            <GameRow key={i} currentGameRow={currentGameRow}></GameRow>
+          ))}
+        </tbody>
+      </ConnectFourTable>
+    </Box>
   );
 };
