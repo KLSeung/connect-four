@@ -8,15 +8,15 @@ import React, {
 interface IGameContext {
   currentGame: Array<Array<number>>;
   gameStatus: boolean;
-  currentPlayer: string;
+  currentPlayer: number;
   setCurrentGame: React.Dispatch<React.SetStateAction<number[][]>>;
   setGameStatus: React.Dispatch<SetStateAction<boolean>>;
-  setCurrentPlayer: React.Dispatch<SetStateAction<string>>;
+  setCurrentPlayer: React.Dispatch<SetStateAction<number>>;
 }
 
 export const players = {
-  player1: "player1",
-  player2: "player2",
+  player1: 1,
+  player2: 2,
 };
 
 export const GameContext = createContext<IGameContext>({} as IGameContext);
@@ -37,7 +37,7 @@ export const GameProvider = ({
     [0, 0, 0, 0, 0, 0, 0],
   ]);
   const [gameStatus, setGameStatus] = useState<boolean>(true);
-  const [currentPlayer, setCurrentPlayer] = useState<string>(players.player1);
+  const [currentPlayer, setCurrentPlayer] = useState<number>(players.player1);
 
   return (
     <GameContext.Provider
