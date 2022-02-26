@@ -3,10 +3,10 @@ import { GamePieceContainer, GamePieceCircle } from "./styles";
 
 interface IGamePiece {
   currentGamePiece: number;
-  index: number;
+  colIndex: number;
 }
 
-export const GamePiece = ({ currentGamePiece, index }: IGamePiece) => {
+export const GamePiece = ({ currentGamePiece, colIndex }: IGamePiece) => {
   const [pieceColor, setPieceColor] = useState<string>("white");
 
   useEffect(() => {

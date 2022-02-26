@@ -12,7 +12,7 @@ export const GameRow = ({ currentGameRow }: IGameRow) => {
         <GamePiece
           key={i}
           currentGamePiece={currentGamePiece}
-          index={i}
+          colIndex={i}
         ></GamePiece>
       ))}
     </tr>
