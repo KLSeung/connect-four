@@ -5,19 +5,26 @@ import React, {
   SetStateAction,
 } from "react";
 
-interface IGameContext {
-  currentGame: Array<Array<number>>;
-  gameStatus: boolean;
-  currentPlayer: number;
-  setCurrentGame: React.Dispatch<React.SetStateAction<number[][]>>;
-  setGameStatus: React.Dispatch<SetStateAction<boolean>>;
-  setCurrentPlayer: React.Dispatch<SetStateAction<number>>;
-}
-
 export const players = {
   player1: 1,
   player2: 2,
 };
+
+export type GameBoard = Array<Array<number>>;
+
+interface IGameStatus {
+  isGameOver: boolean;
+  gameWinner: number | null;
+}
+
+interface IGameContext {
+  currentGame: GameBoard;
+  gameStatus: IGameStatus;
+  currentPlayer: number;
+  setCurrentGame: React.Dispatch<React.SetStateAction<GameBoard>>;
+  setGameStatus: React.Dispatch<SetStateAction<IGameStatus>>;
+  setCurrentPlayer: React.Dispatch<SetStateAction<number>>;
+}
 
 export const GameContext = createContext<IGameContext>({} as IGameContext);
 
@@ -28,7 +35,7 @@ export const GameProvider = ({
 }: {
   children: React.PropsWithChildren<unknown>;
 }) => {
-  const [currentGame, setCurrentGame] = useState<Array<Array<number>>>([
+  const [currentGame, setCurrentGame] = useState<GameBoard>([
     [0, 0, 0, 0, 0, 0, 0],
     [0, 0, 0, 0, 0, 0, 0],
     [0, 0, 0, 0, 0, 0, 0],
@@ -36,7 +43,10 @@ export const GameProvider = ({
     [0, 0, 0, 0, 0, 0, 0],
     [0, 0, 0, 0, 0, 0, 0],
   ]);
-  const [gameStatus, setGameStatus] = useState<boolean>(true);
+  const [gameStatus, setGameStatus] = useState<IGameStatus>({
+    isGameOver: false,
+    gameWinner: null,
+  });
   const [currentPlayer, setCurrentPlayer] = useState<number>(players.player1);
 
   return (
