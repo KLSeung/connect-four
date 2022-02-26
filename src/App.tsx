@@ -6,12 +6,12 @@ import { GameProvider } from "./GameContext";
 
 function App() {
   return (
-    <div className="App">
-      <GameProvider>
+    <GameProvider>
+      <div className="App">
         <PlayerTurnHeader />
         <ConnectFour />
-      </GameProvider>
-    </div>
+      </div>
+    </GameProvider>
   );
 }
 

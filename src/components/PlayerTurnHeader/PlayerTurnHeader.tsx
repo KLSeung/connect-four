@@ -1,6 +1,7 @@
 import { Typography, Button } from "@mui/material";
 import React from "react";
 import { useGameContext } from "../../GameContext";
+import { PlayerTurnHeaderContainer } from "./styles";
 
 export const PlayerTurnHeader = () => {
   const { currentPlayer, setCurrentGame, gameStatus, setGameStatus } =
@@ -22,7 +23,7 @@ export const PlayerTurnHeader = () => {
   };
 
   return (
-    <>
+    <PlayerTurnHeaderContainer>
       <Typography variant="h3" component="div" gutterBottom>
         {gameStatus.gameWinner
           ? `Player ${gameStatus.gameWinner} wins!`
@@ -36,6 +37,6 @@ export const PlayerTurnHeader = () => {
       >
         Reset Game
       </Button>
-    </>
+    </PlayerTurnHeaderContainer>
   );
 };

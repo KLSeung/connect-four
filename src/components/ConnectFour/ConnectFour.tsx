@@ -13,7 +13,7 @@ export const ConnectFour = () => {
         marginTop: "2rem",
       }}
     >
-      <ConnectFourTable cellPadding={0}>
+      <ConnectFourTable cellPadding={0} cellSpacing={0}>
         <tbody>
           {currentGame.map((currentGameRow, i) => (
             <GameRow key={i} currentGameRow={currentGameRow}></GameRow>
