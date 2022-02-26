@@ -1,5 +1,5 @@
 import { Box } from "@mui/material";
-import React, { useEffect } from "react";
+import React from "react";
 import { useGameContext } from "../../GameContext";
 import { GameRow } from "../GameRow/GameRow";
 import { ConnectFourTable } from "./styles";
@@ -10,7 +10,7 @@ export const ConnectFour = () => {
   return (
     <Box
       sx={{
-        marginTop: "8rem",
+        marginTop: "2rem",
       }}
     >
       <ConnectFourTable cellPadding={0}>

@@ -8,10 +8,16 @@ interface IGamePiece {
 }
 
 export const GamePiece = ({ currentGamePiece, colIndex }: IGamePiece) => {
-  const [pieceColor, setPieceColor] = useState<string>("white");
-
   const { currentGame, setCurrentGame, currentPlayer, setCurrentPlayer } =
     useGameContext();
+
+  let pieceColor = "white";
+
+  if (currentGamePiece === 1) {
+    pieceColor = "blue";
+  } else if (currentGamePiece === 2) {
+    pieceColor = "red";
+  }
 
   const handlePlayerTurn = (col: number, gameBoard: Array<Array<number>>) => {
     const newGameBoard = gameBoard;
@@ -26,14 +32,6 @@ export const GamePiece = ({ currentGamePiece, colIndex }: IGamePiece) => {
     }
     setCurrentGame(newGameBoard);
   };
-
-  useEffect(() => {
-    if (currentGamePiece === 1) {
-      setPieceColor("blue");
-    } else if (currentGamePiece === 2) {
-      setPieceColor("red");
-    }
-  }, [currentGamePiece]);
 
   return (
     <td>
