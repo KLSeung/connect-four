@@ -1,0 +1,14 @@
+{
+  "files": {
+    "main.css": "/connect-four/static/css/main.2d40aff4.css",
+    "main.js": "/connect-four/static/js/main.2bb7b210.js",
+    "static/media/table-background.jpg": "/connect-four/static/media/table-background.04c06ac1a29a0452752d.jpg",
+    "index.html": "/connect-four/index.html",
+    "main.2d40aff4.css.map": "/connect-four/static/css/main.2d40aff4.css.map",
+    "main.2bb7b210.js.map": "/connect-four/static/js/main.2bb7b210.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.2d40aff4.css",
+    "static/js/main.2bb7b210.js"
+  ]
+}
